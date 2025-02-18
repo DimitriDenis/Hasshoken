@@ -7,16 +7,77 @@
     <title>Hasshoken - Générateur de Techniques de Combat</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-    <div id="app" class="container mx-auto px-4 py-8">
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
         <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold manga-shadow text-combat-primary">
+            <h1 class="text-5xl font-bold text-combat-primary mb-4 drop-shadow-lg">
                 Générateur de Techniques de Combat
             </h1>
+            <p class="text-gray-600 max-w-xl mx-auto">
+                Découvrez des techniques de combat uniques et époustouflantes à chaque génération !
+            </p>
         </header>
         
-        <main id="technique-generator" class="max-w-2xl mx-auto">
-            <!-- Contenu du générateur sera ajouté dynamiquement -->
+        <main>
+            <div class="bg-white shadow-xl rounded-lg p-6">
+                <section id="generator-controls" class="mb-6">
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <label for="technique-count" class="block text-sm font-medium text-gray-700 mb-2">
+                                Nombre de Techniques
+                            </label>
+                            <select id="technique-count" class="w-full p-2 border rounded-md">
+                                <option value="1">1 Technique</option>
+                                <option value="3" selected>3 Techniques</option>
+                                <option value="5">5 Techniques</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="technique-type" class="block text-sm font-medium text-gray-700 mb-2">
+                                Type de Technique
+                            </label>
+                            <select id="technique-type" class="w-full p-2 border rounded-md">
+                                <option value="">Tous Types</option>
+                                <option value="Frappe">Frappe</option>
+                                <option value="Projection">Projection</option>
+                                <option value="Coup Spécial">Coup Spécial</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="technique-element" class="block text-sm font-medium text-gray-700 mb-2">
+                                Élément
+                            </label>
+                            <select id="technique-element" class="w-full p-2 border rounded-md">
+                                <option value="">Tous Éléments</option>
+                                <option value="Feu">Feu</option>
+                                <option value="Eau">Eau</option>
+                                <option value="Terre">Terre</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="text-center mb-6">
+                    <button id="generate-technique" class="btn-primary px-6 py-3 rounded-full text-lg hover:scale-105 transition-transform">
+                        🥋 Générer des Techniques 🔮
+                    </button>
+                </div>
+                
+                <section id="technique-generator" class="grid md:grid-cols-1 gap-4">
+                    <!-- Les techniques générées apparaîtront ici -->
+                </section>
+            </div>
+            
+            <div id="technique-actions" class="mt-6 text-center space-x-4" style="display: none;">
+                <button id="save-techniques" class="btn-secondary px-4 py-2 rounded-md">
+                    Sauvegarder les Techniques
+                </button>
+                <button id="share-techniques" class="btn-secondary px-4 py-2 rounded-md">
+                    Partager
+                </button>
+            </div>
         </main>
     </div>
 

@@ -8,7 +8,7 @@
 /* Styles personnalisés supplémentaires */
 @layer base {
   body {
-    @apply bg-combat-background text-gray-800;
+    @apply bg-gray-50 text-gray-800;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -19,11 +19,24 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-combat-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors;
+    @apply bg-combat-primary text-white font-bold py-2 px-4 rounded-lg 
+           hover:bg-opacity-90 transition-colors shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg 
+           hover:bg-gray-300 transition-colors;
   }
 
   .card {
-    @apply bg-white shadow-md rounded-lg p-6;
+    @apply bg-white shadow-md rounded-lg p-4 border border-gray-100 
+           hover:shadow-xl transition-shadow;
+  }
+
+  .technique-card {
+    @apply bg-white border border-gray-200 rounded-lg p-4 
+           transform transition-all duration-300 
+           hover:-translate-y-2 hover:shadow-lg;
   }
 }
 
@@ -31,4 +44,19 @@
   .manga-shadow {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-combat-primary to-red-600 
+           bg-clip-text text-transparent;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
 }
