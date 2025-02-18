@@ -17,7 +17,7 @@
     "typescript",
     "manga"
   ],
-  "author": "Votre Nom",
+  "author": "Dimitri Denis",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.10.0",
